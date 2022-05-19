@@ -5,7 +5,8 @@ drop table if exists users;
 
 CREATE TABLE quizzes(
     quiz_id integer primary key autoincrement not null,
-    title TEXT not null
+    title TEXT not null,
+    description TEXT not null
 );
 
 CREATE TABLE questions(
