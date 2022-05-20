@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Questions Page{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <ol type="1">
+    {% for question in questions %}
+        <li>
+        <a href="{{url_for('answers', question_id=question['question_id'])}}">{{question['question']}}</a>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
