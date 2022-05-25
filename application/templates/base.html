@@ -7,13 +7,14 @@
 </head>
 <body>
     <nav>
-        <h1>Flaskr</h1>
+        <img src="{{ url_for('static', filename='book_logo.jpg') }}" height="50px" width="50px">
+        <h1>Quiz Manager</h1>
         <ul>
             {% if g.user %}
                 <li><span>{{ g.user['username'] }}</span>
-                <li><a href="{{ url_for('logout') }}">Log Out</a>
+                <li><a href="{{ url_for('quiz_manager.logout') }}">Log Out</a>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a>
+                <li><a href="{{ url_for('quiz_manager.login') }}">Log In</a>
             {% endif %}
         </ul>
     </nav>

@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    <ul>
     {% for quiz in quizzes %}
-        <div>
-            <a href="{{url_for('questions', quiz_id=quiz['quiz_id'])}}">{{quiz['title']}}</a>
+        <li>
+            <a href="{{url_for('quiz_manager.questions', quiz_id=quiz['quiz_id'])}}">{{quiz['title']}}</a>
             <p>{{quiz['description']}}</p>
-        </div>
+        </li>
     {% endfor %}
+    </ul>
 {% endblock %}
