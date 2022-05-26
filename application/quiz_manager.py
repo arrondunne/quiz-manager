@@ -53,8 +53,9 @@ def questions(quiz_id):
     """
     db = get_db()
     questions = db.execute("SELECT * FROM questions WHERE quiz_id = ?", quiz_id).fetchall()
+    quiz = db.execute("SELECT * FROM quizzes WHERE quiz_id = ?", quiz_id).fetchone()
 
-    return render_template('questions_page.html', questions=questions)
+    return render_template('questions_page.html', questions=questions, quiz=quiz)
 
 
 @bp.route('/<question_id>/answers')
@@ -69,8 +70,9 @@ def answers(question_id):
     """
     db = get_db()
     answers = db.execute("SELECT * FROM answers WHERE question_id = ?", question_id).fetchall()
+    question = db.execute("SELECT * FROM questions WHERE question_id = ?", question_id).fetchone()
 
-    return render_template('answers_page.html', answers=answers)
+    return render_template('answers_page.html', answers=answers, question=question)
 
 
 @bp.route('/login', methods=('GET', 'POST'))

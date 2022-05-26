@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+    <p>{{question['question']}}</p>
     <ol type="A">
     {% for answer in answers %}
         <li>{{answer['answer']}}</li>

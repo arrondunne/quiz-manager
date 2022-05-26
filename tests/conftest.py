@@ -6,7 +6,7 @@ from application.db import get_db, init_db
 
 """
     Module containing PyTest fixtures. Fixtures are reusable piueces of code that can be used in tests for steps which
-    happen repetetively
+    happen repeatedly
 """
 
 # Read the test_data.sql file and assign it to a variable for later use

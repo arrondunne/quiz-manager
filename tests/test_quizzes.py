@@ -1,6 +1,3 @@
-import pytest
-from application.db import get_db
-
 
 def test_home(client, auth):
     """
