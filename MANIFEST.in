@@ -1,6 +1,0 @@
-include application/schema.sql
-include application/data.sql
-include application/users.csv
-graft application/static
-graft application/templates
-global-exclude *.pyc
